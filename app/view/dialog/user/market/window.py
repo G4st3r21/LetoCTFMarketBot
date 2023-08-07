@@ -21,17 +21,14 @@ menu = Window(
     StaticLoader.media("logo.png", ContentType.PHOTO),
     StaticLoader.template("profile"),
     Row(
-        Start(Const("👕 Футболки"), id="shirt", state=ChallengeStateGroup.menu),
-        Start(Const("🙋 Толстовки"), id="sweatshirts", state=EventStateGroup.menu),
+        Start(Const("👕 Футболки"), id="shirt", state=MarketStateGroup.menu),
+        Start(Const("🙋 Толстовки"), id="sweatshirts", state=MarketStateGroup.menu),
     ),
     Row(
-        Start(Const("🍺 Кружки"), id="beer_cups", state=ScoreStateGroup.user_scoreboard),
-        Start(Const("📚 Прочее"), id="other", state=ScoreStateGroup.team_scoreboard),
+        Start(Const("🍺 Кружки"), id="beer_cups", state=MarketStateGroup.user_scoreboard),
+        Start(Const("📚 Прочее"), id="other", state=MarketStateGroup.team_scoreboard),
     ),
-    Row(
-        Start(Const("⬅️ Выйти из магазина"), id="back", state=ScoreStateGroup.user_scoreboard),
-        Start(Const("📆 История заказов"), id="order_history", state=ScoreStateGroup.team_scoreboard),
-    ),
+    Start(Const("📆 История заказов"), id="order_history", state=ScoreStateGroup.team_scoreboard),
     Row(
         Cancel(back, id="back"),
         Start(Const("🛠️ Администрирование"), id="menu", state=AdminStateGroup.menu, when=UserHandler.is_admin),

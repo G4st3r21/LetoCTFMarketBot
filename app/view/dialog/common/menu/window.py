@@ -13,6 +13,7 @@ from app.view.state.user import (
     EventStateGroup,
     SupportStateGroup,
 )
+from app.view.state.user.MarketStateGroup import MarketStateGroup
 from app.view.static import StaticLoader
 
 menu = Window(
@@ -31,6 +32,7 @@ menu = Window(
         Url(Const("🛸 Диск"), Const("http://owncloud.letoctf/s/n7VN8jKnqCJsH7F")),
         Url(Const("🚩 AntiCTF"), Const("https://forms.gle/3uTjsjcffwaB4kfKA")),
     ),
+    Start(Const("Маркет"), id="market", state=MarketStateGroup.menu),
     Start(Const("🛠️ Администрирование"), id="menu", state=AdminStateGroup.menu, when=UserHandler.is_admin),
     Start(Const("🆘 Поддержка"), id="support", state=SupportStateGroup.menu),
     state=MenuStateGroup.menu,
