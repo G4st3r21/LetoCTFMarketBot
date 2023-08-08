@@ -4,3 +4,6 @@ from .ScoreHandler import ScoreHandler
 from .SupportHandler import SupportHandler
 from .TeamHandler import TeamHandler
 from .UserHandler import UserHandler
+from .ProductHandler import ProductHandler
+from .OrderHistoryHandler import OrderHistoryHandler
+

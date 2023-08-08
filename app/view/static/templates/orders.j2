@@ -1,0 +1,9 @@
+{% if orders %}
+<b>Список покупок:</b>
+{% for order in orders %}
+{{ order }}
+{% endfor %}
+
+{% else %}
+Рейтинг пуст
+{% endif %}
