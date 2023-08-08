@@ -7,7 +7,6 @@ from app.controller.handler.user import UserHandler
 from app.controller.handler.user.MarketHandler import MarketHandler
 from app.view.state.admin import AdminStateGroup
 from app.view.state.user import (
-    ScoreStateGroup,
     SupportStateGroup,
 )
 from app.view.state.user.MarketStateGroup import MarketStateGroup
@@ -32,5 +31,5 @@ menu = Window(
     ),
     Start(Const("🆘 Поддержка"), id="support", state=SupportStateGroup.menu),
     state=MarketStateGroup.menu,
-    getter=MarketHandler.category_menu,
+    getter=MarketHandler.profile_score,
 )
